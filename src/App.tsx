@@ -69,7 +69,7 @@ function App() {
     const data = board[row][col];
     if (data !== "") return;
     setTotal(total + 1);
-    console.log(total);
+    // console.log(total);
     const newBoard = [...board];
     newBoard[row][col] = total % 2 === 0 ? "O" : "X";
     setBoard(newBoard);
@@ -86,11 +86,11 @@ function App() {
 
   return (
     <>
-      <div className="w-screen h-screen p-1 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 ">    
+      <div className="w-screen h-screen p-1 select-none bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">    
         <div className="relative flex flex-col items-center justify-center w-full h-full overflow-hidden bg-black">
         {
           gameOver !== 0 ?
-          <div className="absolute flex items-center justify-center w-screen h-screen backdrop-blur-md">
+          <div className="absolute flex items-center justify-center w-screen h-screen backdrop-blur-sm">
             <div className="bg-white rounded-md bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">  
               <div className="flex flex-col items-center justify-center p-6 m-1 space-y-4 text-white bg-black rounded-md">
                 <h1 className="text-4xl" >Game Over!</h1>
@@ -117,55 +117,55 @@ function App() {
                 className="flex items-center justify-center border-r-4 border-green-400 text-7xl "
                 onClick={() => markPosition(0, 0)}
               >
-                {board[0][0]}
+                <h6 className={`${board[0][0]?"animate-[spin_1s]":""}`}>{board[0][0]}</h6>
               </p>
               <p
                 className="flex items-center justify-center border-r-4 border-green-400 text-7xl"
                 onClick={() => markPosition(0, 1)}
               >
-                {board[0][1]}
+                <h6 className={`${board[0][1]?"animate-[spin_1s]":""}`}>{board[0][1]}</h6>
               </p>
               <p
                 className="flex items-center justify-center border-green-400 text-7xl"
                 onClick={() => markPosition(0, 2)}
               >
-                {board[0][2]}
+                <h6 className={`${board[0][2]?"animate-[spin_1s]":""}`}>{board[0][2]}</h6>
               </p>
               <p
                 className="flex items-center justify-center border-t-4 border-r-4 border-green-400 text-7xl"
                 onClick={() => markPosition(1, 0)}
               >
-                {board[1][0]}
+                <h6 className={`${board[1][0]?"animate-[spin_1s]":""}`}>{board[1][0]}</h6>
               </p>
               <p
                 className="flex items-center justify-center border-t-4 border-r-4 border-green-400 text-7xl"
                 onClick={() => markPosition(1, 1)}
               >
-                {board[1][1]}
+                <h6 className={`${board[1][1]?"animate-[spin_1s]":""}`}>{board[1][1]}</h6>
               </p>
               <p
                 className="flex items-center justify-center border-t-4 border-green-400 text-7xl"
                 onClick={() => markPosition(1, 2)}
               >
-                {board[1][2]}
+                <h6 className={`${board[1][2]?"animate-[spin_1s]":""}`}>{board[1][2]}</h6>
               </p>
               <p
                 className="flex items-center justify-center border-t-4 border-r-4 border-green-400 text-7xl"
                 onClick={() => markPosition(2, 0)}
               >
-                {board[2][0]}
+                <h6 className={`${board[2][0]?"animate-[spin_1s]":""}`}>{board[2][0]}</h6>
               </p>
               <p
                 className="flex items-center justify-center border-t-4 border-r-4 border-green-400 text-7xl"
                 onClick={() => markPosition(2, 1)}
               >
-                {board[2][1]}
+                <h6 className={`${board[2][1]?"animate-[spin_1s]":""}`}>{board[2][1]}</h6>
               </p>
               <p
                 className="flex items-center justify-center border-t-4 border-green-400 text-7xl"
                 onClick={() => markPosition(2, 2)}
               >
-                {board[2][2]}
+                <h6 className={`${board[2][2]?"animate-[spin_1s]":""}`}>{board[2][2]}</h6>
               </p>
             </div>
             {/* <button onClick={handleClear} className="px-6 py-2 m-2 mt-8 bg-white ">
