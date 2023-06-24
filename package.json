@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Keyan5.github.io/<repo>/",
+  "homepage": "https://Keyan5.github.io/tik-tak-toe-two-player/",
   "scripts": {
     "dev": "vite --host",
     "build": "tsc && vite build",
