@@ -65,8 +65,8 @@ function App() {
     return checkCol(col) || checkRow(row) || checkDiagonal(row, col);
   };
 
-  const markPosition = (e: HTMLParagraphElement, row: number, col: number) => {
-    const data = e.target?.innerText;
+  const markPosition = (row: number, col: number) => {
+    const data = board[row][col];
     if (data !== "") return;
     setTotal(total + 1);
     console.log(total);
@@ -115,55 +115,55 @@ function App() {
             <div className="grid grid-cols-3 grid-rows-3 overflow-hidden text-white w-96 h-96">
               <p
                 className="flex items-center justify-center border-r-4 border-green-400 text-7xl "
-                onClick={(e) => markPosition(e, 0, 0)}
+                onClick={() => markPosition(0, 0)}
               >
                 {board[0][0]}
               </p>
               <p
                 className="flex items-center justify-center border-r-4 border-green-400 text-7xl"
-                onClick={(e) => markPosition(e, 0, 1)}
+                onClick={() => markPosition(0, 1)}
               >
                 {board[0][1]}
               </p>
               <p
                 className="flex items-center justify-center border-green-400 text-7xl"
-                onClick={(e) => markPosition(e, 0, 2)}
+                onClick={() => markPosition(0, 2)}
               >
                 {board[0][2]}
               </p>
               <p
                 className="flex items-center justify-center border-t-4 border-r-4 border-green-400 text-7xl"
-                onClick={(e) => markPosition(e, 1, 0)}
+                onClick={() => markPosition(1, 0)}
               >
                 {board[1][0]}
               </p>
               <p
                 className="flex items-center justify-center border-t-4 border-r-4 border-green-400 text-7xl"
-                onClick={(e) => markPosition(e, 1, 1)}
+                onClick={() => markPosition(1, 1)}
               >
                 {board[1][1]}
               </p>
               <p
                 className="flex items-center justify-center border-t-4 border-green-400 text-7xl"
-                onClick={(e) => markPosition(e, 1, 2)}
+                onClick={() => markPosition(1, 2)}
               >
                 {board[1][2]}
               </p>
               <p
                 className="flex items-center justify-center border-t-4 border-r-4 border-green-400 text-7xl"
-                onClick={(e) => markPosition(e, 2, 0)}
+                onClick={() => markPosition(2, 0)}
               >
                 {board[2][0]}
               </p>
               <p
                 className="flex items-center justify-center border-t-4 border-r-4 border-green-400 text-7xl"
-                onClick={(e) => markPosition(e, 2, 1)}
+                onClick={() => markPosition(2, 1)}
               >
                 {board[2][1]}
               </p>
               <p
                 className="flex items-center justify-center border-t-4 border-green-400 text-7xl"
-                onClick={(e) => markPosition(e, 2, 2)}
+                onClick={() => markPosition(2, 2)}
               >
                 {board[2][2]}
               </p>
